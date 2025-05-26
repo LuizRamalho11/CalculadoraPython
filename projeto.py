@@ -22,10 +22,10 @@ janela.config(bg=cor6)
 
 # Criando os frames
 
-tela = Frame(janela, width=235, height=50, bg=cor4, )
+tela = Frame(janela, width=239, height=50, bg=cor4, relief=RAISED)
 tela.grid(row=0, column=0)
 
-corpo = Frame(janela, width=235, height=268)
+corpo = Frame(janela)
 corpo.grid(row=1, column=0)
 
 # Configurando a tela
@@ -38,7 +38,7 @@ valor.set(all_valores)  # Inicializando a variável StringVar com o valor vazio/
 
 def calcular():
     global all_valores
-    resultado = eval(all_valores)  # Avalia a expressão      matemática
+    resultado = eval(all_valores)  # Avalia a expressão matemática
     valor.set(resultado)  # Atualiza o visor com o resultado
 
 def limpar():
@@ -59,57 +59,57 @@ visor.place(x=0, y=0)
 
 # Criando os Botões
 b1 = Button(corpo, command = limpar, text="C", width=11, height=2, bg=cor3, fg=cor6,font="Ivy 13 bold", relief=RAISED, overrelief=RIDGE)
-b1.place(x=0, y=0)
+b1.grid(row=0, column=0, columnspan=2)
 
 b2 = Button(corpo, command= lambda: valores('%'), text="%", width=5, height=2, bg=cor3, fg=cor6,font="Ivy 13 bold", relief=RAISED, overrelief=RIDGE)
-b2.place(x=118, y=0)
+b2.grid(row=0, column=2)
 
 b3 = Button(corpo, command= lambda: valores('/'), text="/", width=5, height=2, bg=cor2, fg=cor5, font="Ivy 13 bold", relief=RAISED, overrelief=RIDGE)
-b3.place(x=177, y=0)
+b3.grid(row=0, column=3)
 
 b4 = Button(corpo, command= lambda: valores('7'), text="7", width=5, height=2, bg=cor3, fg=cor6,font="Ivy 13 bold", relief=RAISED, overrelief=RIDGE)
-b4.place(x=0, y=52)
+b4.grid(row=1, column=0)
 
 b5 = Button(corpo, command= lambda: valores('8'), text="8", width=5, height=2, bg=cor3, fg=cor6, font="Ivy 13 bold", relief=RAISED, overrelief=RIDGE)
-b5.place(x=59, y=52)
+b5.grid(row=1, column=1)
 
 b6 = Button(corpo, command= lambda: valores('9'), text="9", width=5, height=2, bg=cor3, fg=cor6, font="Ivy 13 bold", relief=RAISED, overrelief=RIDGE)
-b6.place(x=118, y=52)
+b6.grid(row=1, column=2)
 
 b7 = Button(corpo, command= lambda: valores('*'), text="*", width=5, height=2, bg=cor2, fg=cor5, font="Ivy 13 bold", relief=RAISED, overrelief=RIDGE)
-b7.place(x=177, y=52)
+b7.grid(row=1, column=3)
 
 b8 = Button(corpo, command= lambda: valores('4'), text="4", width=5, height=2, bg=cor3, fg=cor6,font="Ivy 13 bold", relief=RAISED, overrelief=RIDGE)
-b8.place(x=0, y=104)
+b8.grid(row=2, column=0)
 
 b9 = Button(corpo, command= lambda: valores('5'), text="5", width=5, height=2, bg=cor3, fg=cor6, font="Ivy 13 bold", relief=RAISED, overrelief=RIDGE)
-b9.place(x=59, y=104)
+b9.grid(row=2, column=1)
 
 b10 = Button(corpo, command= lambda: valores('6'), text="6", width=5, height=2, bg=cor3, fg=cor6, font="Ivy 13 bold", relief=RAISED, overrelief=RIDGE)
-b10.place(x=118, y=104)
+b10.grid(row=2, column=2)
 
 b11 = Button(corpo, command= lambda: valores('-'), text="-", width=5, height=2, bg=cor2, fg=cor5, font="Ivy 13 bold", relief=RAISED, overrelief=RIDGE)
-b11.place(x=177, y=104)
+b11.grid(row=2, column=3)
 
 b12 = Button(corpo, command= lambda: valores('1'), text="1", width=5, height=2, bg=cor3, fg=cor6,font="Ivy 13 bold", relief=RAISED, overrelief=RIDGE)
-b12.place(x=0, y=156)
+b12.grid(row=3, column=0)
 
 b13 = Button(corpo, command= lambda: valores('2'), text="2", width=5, height=2, bg=cor3, fg=cor6,font="Ivy 13 bold", relief=RAISED, overrelief=RIDGE)
-b13.place(x=59, y=156)
+b13.grid(row=3, column=1)
 
 b14 = Button(corpo, command= lambda: valores('3'), text="3", width=5, height=2, bg=cor3, fg=cor6, font="Ivy 13 bold", relief=RAISED, overrelief=RIDGE)
-b14.place(x=118, y=156)
+b14.grid(row=3, column=2)
 
 b15 = Button(corpo, command= lambda: valores('+'), text="+", width=5, height=2, bg=cor2, fg=cor5, font="Ivy 13 bold", relief=RAISED, overrelief=RIDGE)
-b15.place(x=177, y=156)
+b15.grid(row=3, column=3)
 
 b16 = Button(corpo, command= lambda: valores('0'), text="0", width=11, height=2, bg=cor3, fg=cor6,font="Ivy 13 bold", relief=RAISED, overrelief=RIDGE)
-b16.place(x=0, y=208)
+b16.grid(row=4, column=0, columnspan=2)
 
 b17 = Button(corpo, command= lambda: valores('.'), text=".", width=5, height=2, bg=cor3, fg=cor6,font="Ivy 13 bold", relief=RAISED, overrelief=RIDGE)
-b17.place(x=118, y=208)
+b17.grid(row=4, column=2)
 
 b18 = Button(corpo, command= calcular, text="=", width=5, height=2, bg=cor2, fg=cor5, font="Ivy 13 bold", relief=RAISED, overrelief=RIDGE)
-b18.place(x=177, y=208)
+b18.grid(row=4, column=3)
 
 janela.mainloop()
